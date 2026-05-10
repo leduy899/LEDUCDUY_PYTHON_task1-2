@@ -1,0 +1,22 @@
+income_input = float(input("Nhap tong thu nhap hang thang (trieu VND): "))
+tax_amount = 0
+
+if income_input <= 5:
+    tax_amount = 0
+elif income_input <= 10:
+    tax_amount = (income_input - 5) * 0.05
+elif income_input <= 18:
+    tax_amount = (income_input - 5) * 0.05 + (income_input - 10) * 0.10
+elif income_input <= 32:
+    tax_amount = (income_input - 5) * 0.05 + (income_input - 10) * 0.10 + (income_input - 18) * 0.15
+elif income_input <= 52:
+    tax_amount = (income_input - 5) * 0.05 + (income_input - 10) * 0.10 + (income_input - 18) * 0.15 + (income_input - 32) * 0.20
+elif income_input <= 80:
+    tax_amount = (income_input - 5) * 0.05 + (income_input - 10) * 0.10 + (income_input - 18) * 0.15 + (income_input - 32) * 0.20 + (income_input - 52) * 0.25
+else:
+    tax_amount = (income_input - 5) * 0.05 + (income_input - 10) * 0.10 + (income_input - 18) * 0.15 + (income_input - 32) * 0.20 + (income_input - 52) * 0.25 + (income_input - 80) * 0.30
+
+net_income = income_input - tax_amount
+
+print(f"So tien thue phai nop: {tax_amount:,.2f} trieu VND")
+print(f"So tien thu nhap sau thue: {net_income:,.2f} trieu VND")
