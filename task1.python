@@ -1,0 +1,22 @@
+for _ in range(3):
+    emp_name = input("Nhap ten nhan vien: ")
+    emp_pos = input("Nhap chuc vu (giam doc/truong phong/nhan vien): ")
+    work_days = int(input("Nhap so ngay cong: "))
+    
+    base_salary = 800000
+    allowance = 0
+    pos_lower = emp_pos.lower()
+    
+    if pos_lower == "giam doc":
+        allowance = 5000000
+    elif pos_lower == "truong phong":
+        allowance = 3000000
+    elif pos_lower == "nhan vien":
+        allowance = 1000000
+        
+    total_salary = (base_salary * work_days) + allowance
+    
+    if work_days > 25:
+        total_salary += total_salary * 0.10
+        
+    print(f"Thong tin: {emp_name} - {emp_pos} - Luong: {total_salary:,.0f} VND\n")
